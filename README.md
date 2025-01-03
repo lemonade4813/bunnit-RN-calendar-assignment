@@ -38,8 +38,8 @@
 
 
 
-  2) 선택 시, prevMonthDates, prevMonthDates, nowMonthDates 함수로 UI에 표시될 날짜 배열이 생성됩니다. 
-    (자바스크립트에 내장 객체 Date 함수의 getDay(), getDate() 메소드 등을 사용하였습니다. )
+  2) 선택 시, prevMonthDates, newMonthDates, nowMonthDates 함수로 UI에 표시될 날짜 배열이 생성됩니다. 
+    (자바스크립트에 내장 객체 Date 함수의 getFullYear(), getMonth(), getDay(), getDate() 메소드 등을 사용하였습니다. )
 
 
 
