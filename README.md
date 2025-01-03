@@ -1,79 +1,44 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 탭 네비게이션 및 캘린더 구현 과제
 
-# Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+- 프로젝트 환경
+  
+  - React Native CLI
+  - Node v18.20.5
+  - npm v10.8.2
+  - Typescript : 4.8.6
+  - React Native : "0.72.17"
+ 
+    
+  - @react-navigation/bottom-tabs: "^7.2.0",
+  - @react-navigation/native: "^7.0.14",
+  - react-native-gesture-handler: "^2.8.0",
+  - react-native-reanimated: "3.5.4",
+  - react-native-safe-area-context: "^4.4.0",
+  - react-native-screens: "^4.4.0",
+  - react-native-svg: "^12.3.0"
 
-## Step 1: Start the Metro Server
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## LEVEL 1: 탭 네비게이션 구현
 
-```bash
-# using npm
-npm start
+- App.tsx 파일에 구현
 
-# OR using Yarn
-yarn start
-```
+## LEVEL 2: 캘린더 구현
 
-## Step 2: Start your Application
+- 구현 과정 : 
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+- 1) 캘린더 상단 년, 월 표시 좌우 양쪽을 버튼을 클릭하면 월의 이동이 가능합니다.
+  좌우 버튼 클릭 시 nowDate(인스턴스 생성시 날짜도 포함하여 설정하므로 변수 이름을 nowMonth가 아닌 nowDate로 정의)가 설정이 되고
+  선택한 월의 날짜가 캘린더에 표시됩니다.
 
-### For Android
+- 2) 선택 시, prevMonthDates, prevMonthDates, nowMonthDates 함수로 UI에 표시될 날짜 배열이 생성됩니다. 
+    (자바스크립트에 내장 객체 Date 함수의 getDay(), getDate() 메소드 등을 사용하였습니다. )
 
-```bash
-# using npm
-npm run android
+- 3) 날짜 배열 요소 중 이전 월 / 다음 월은 문자로, 현재 월은 숫자로 설정하여
+     타입에 따라 텍스트 color, disabled 속성을 적용하였습니다. (현재 월 : 버튼 enabled, 텍스트 검정색 / 나머지 : 버튼 disabled, 텍스트 회색
 
-# OR using Yarn
-yarn android
-```
+- 4) 현재 월에서 임의의 날짜를 클릭하면 날짜가 selectedDate 변수에 저장합니다. 선택된 날짜인지 여부는 renderDayItem 컴포넌트에서 datesEqual 변수로 판단합니다.    
 
-### For iOS
 
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## LEVEL 3 : 월 캘린더 <-> 주 캘린더 변경(미구현)
