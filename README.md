@@ -23,7 +23,7 @@
 ## LEVEL 1: 탭 네비게이션 구현
 
 - App.tsx 파일에 구현
-- 탭 이미지는 https://www.svgrepo.com/에서 제공하는 SVG 파일을 사용했습니다.
+- 탭 이미지는 https://www.svgrepo.com/ 에서 제공하는 SVG 파일을 사용했습니다.
 
 ## LEVEL 2: 캘린더 구현
 
@@ -52,3 +52,10 @@
 
 
 ## LEVEL 3 : 월 캘린더 <-> 주 캘린더 변경(미구현)
+
+- 미구현입니다. 만일 구현을 한다면 대략적으로 다음과 같이 진행을 할 것 같습니다.
+
+1) const [isWeekCalender, setIsWeekCalender] = useState(false) 변수를 설정하여 클릭 시 전환이 되어 style.container 속성을 적용한다.
+
+2) FlatList 등으로 일단 스크롤이 가능하게 하고 -> 현재 월의 첫 번째 날짜가 가장 화면 왼쪽에 있을 경우, 이전 월의 날짜 배열을 구하고, 현재 월의 날짜 배열과 병합한다.
+
